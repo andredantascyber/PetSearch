@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Animal | Pet Search</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f6fafc;
+            color: #23422c;
+            margin: 0;
+        }
+        header {
+            background: linear-gradient(90deg, #4db6ac 60%, #81c784 100%);
+            color: #23422c;
+            padding: 32px 0 16px 0;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(77,182,172,0.13);
+        }
+        .logo {
+            width: 90px;
+            margin-bottom: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0 0 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 18px;
+        }
+        nav ul li a {
+            color: #23422c;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: color 0.2s;
+        }
+        nav ul li a:hover {
+            color: #388e3c;
+        }
+        main {
+            max-width: 550px;
+            margin: 36px auto 0 auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 18px rgba(77,182,172,0.10);
+            padding: 32px 28px;
+        }
+        h2 {
+            text-align: center;
+            color: #388e3c;
+            margin-bottom: 18px;
+        }
+        form label {
+            display: block;
+            margin-top: 14px;
+            font-weight: 500;
+        }
+        form input, form select, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid #b2dfdb;
+            background: #f6fafc;
+        }
+        form button {
+            background: #388e3c;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 0;
+            width: 100%;
+            font-size: 1.15em;
+            font-weight: 600;
+            margin-top: 24px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        form button:hover {
+            background: #23422c;
+        }
+        footer {
+            background: #388e3c;
+            color: #fff;
+            text-align: center;
+            padding: 18px 0;
+            margin-top: 40px;
+        }
+        @media (max-width: 700px) {
+            main {
+                padding: 18px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-animada">
+  <div class="pata">
+    <span class="dedo"></span>
+    <span class="dedo"></span>
+    <span class="dedo"></span>
+    <span class="dedo"></span>
+    <span class="palma"></span>
+  </div>
+  <span class="texto-logo">Pet Search</span>
+</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="cadastro.html">Cadastrar Animal</a></li>
+                <li><a href="perdidos.html">Animais Perdidos</a></li>
+                <li><a href="encontrados.html">Animais Encontrados</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Cadastre um animal perdido ou encontrado</h2>
+        <form onsubmit="salvarCadastroAnimal(event)" enctype="multipart/form-data" id="formCadastro">
+ 	<div class="form-group">
+            <label for="status">Situação do Animal:</label>
+            <select id="status" name="status" required>
+                <option value="">Selecione</option>
+                <option value="perdido">Perdido</option>
+                <option value="encontrado">Encontrado</option>
+            </select>
+
+            <label for="nome">Nome do Animal:</label>
+            <input type="text" id="nome" name="nome" placeholder="Ex: Bob, Luna">
+
+            <label for="foto">Foto do Animal:</label>
+            <input type="file" id="foto" name="foto" accept="image/*">
+
+            <label for="porte">Porte:</label>
+            <select id="porte" name="porte">
+                <option value="">Selecione</option>
+                <option value="Pequeno">Pequeno</option>
+                <option value="Médio">Médio</option>
+                <option value="Grande">Grande</option>
+            </select>
+
+            <label for="cor">Cor:</label>
+            <input type="text" id="cor" name="cor" placeholder="Ex: Branco, Preto, Caramelo">
+
+            <label for="raca">Raça:</label>
+            <input type="text" id="raca" name="raca" placeholder="Ex: SRD, Poodle, Siamês">
+
+            <label for="genero">Gênero:</label>
+            <select id="genero" name="genero">
+                <option value="">Selecione</option>
+                <option value="Macho">Macho</option>
+                <option value="Fêmea">Fêmea</option>
+            </select>
+
+            <label for="descricao">Breve Descrição / Características:</label>
+            <textarea id="descricao" name="descricao" rows="3" placeholder="Ex: Muito dócil, usa coleira azul"></textarea>
+
+            <label for="localizacao">Última Localização:</label>
+            <input type="text" id="localizacao" name="localizacao" placeholder="Ex: Bairro, rua, cidade">
+
+            <label for="tutor">Nome do Tutor:</label>
+            <input type="text" id="tutor" name="tutor" placeholder="Seu nome ou de quem encontrou">
+
+            <label for="email">E-mail do Tutor:</label>
+            <input type="email" id="email" name="email" placeholder="email@exemplo.com">
+
+            <label for="telefone">Telefone do Tutor:</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(11) 91234-5678">
+
+            <button type="submit">Cadastrar Animal</button>
+ 	 </div>
+        </form>
+    </main>
+    <footer>
+        &copy; 2025 Pet Search. Projeto Integrador.
+    </footer>
+    <script src="src/js/script.js"></script>
+</body>
+</html>

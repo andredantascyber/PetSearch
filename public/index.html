@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Pet Search - Encontre Animais Perdidos</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f6fafc;
+            color: #23422c;
+            margin: 0;
+        }
+        header {
+            background: linear-gradient(90deg, #4db6ac 60%, #81c784 100%);
+            color: #23422c;
+            padding: 32px 0 16px 0;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(77,182,172,0.13);
+        }
+        .logo {
+            width: 90px;
+            margin-bottom: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0 0 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 18px;
+        }
+        nav ul li a {
+            color: #23422c;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: color 0.2s;
+        }
+        nav ul li a:hover {
+            color: #388e3c;
+        }
+        .hero-section {
+            background: linear-gradient(120deg, #e0f2f1 60%, #c8e6c9 100%);
+            min-height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            color: #23422c;
+            position: relative;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-content h2 {
+            font-size: 2.1em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .hero-content p {
+            font-size: 1.15em;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background: #388e3c;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 1.1em;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background: #23422c;
+            color: #fff;
+        }
+        .cards-section {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .cards-title {
+            font-size: 1.5em;
+            color: #388e3c;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 2px 18px rgba(77,182,172,0.10);
+            padding: 22px 18px;
+            text-align: center;
+            transition: transform 0.18s;
+        }
+        .card:hover {
+            transform: translateY(-6px) scale(1.03);
+        }
+        .card img {
+            width: 80px;
+            margin-bottom: 12px;
+        }
+        .card h3 {
+            color: #388e3c;
+            margin-bottom: 10px;
+        }
+        .card p {
+            color: #23422c;
+            font-size: 1em;
+        }
+        footer {
+            background: #388e3c;
+            color: #fff;
+            text-align: center;
+            padding: 18px 0;
+            margin-top: 40px;
+        }
+        @media (max-width: 700px) {
+            .hero-section {
+                min-height: 180px;
+            }
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-animada">
+  		<div class="pata">
+   			 <span class="dedo"></span>
+   			 <span class="dedo"></span>
+   			 <span class="dedo"></span>
+   			 <span class="dedo"></span>
+    			<span class="palma"></span>
+  			</div>
+ 			 <span class="texto-logo">Pet Search</span>
+			</div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="cadastro.html">Cadastrar Animal</a></li>
+                <li><a href="perdidos.html">Animais Perdidos</a></li>
+                <li><a href="encontrados.html">Animais Encontrados</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero-section">
+        <div class="hero-content">
+            <h2>Encontre ou cadastre animais perdidos e encontrados</h2>
+            <p>Ajude a reunir famílias e salvar vidas! Cadastre um animal ou procure na nossa plataforma.</p>
+            <a href="cadastro.html" class="btn">Cadastrar Animal</a>
+        </div>
+    </section>
+    <section class="cards-section">
+        <div class="cards-title">Como funciona?</div>
+        <div class="cards">
+            <div class="card">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+ 		 <ellipse cx="20" cy="22" rx="8" ry="10" fill="#4db6ac"/>
+  		<ellipse cx="44" cy="22" rx="8" ry="10" fill="#388e3c"/>
+  		<ellipse cx="32" cy="44" rx="14" ry="12" fill="#81c784"/>
+ 		 <ellipse cx="12" cy="44" rx="5" ry="7" fill="#388e3c"/>
+  		<ellipse cx="52" cy="44" rx="5" ry="7" fill="#4db6ac"/>
+		</svg>
+
+                <h3>Cadastre</h3>
+                <p>Registre informações e fotos de animais perdidos ou encontrados de forma fácil e rápida.</p>
+            </div>
+            <div class="card">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  		<circle cx="30" cy="30" r="16" fill="#4db6ac" stroke="#388e3c" stroke-width="4"/>
+  		<rect x="42" y="42" width="14" height="6" rx="3" transform="rotate(45 42 42)" fill="#81c784" stroke="#388e3c" stroke-width="2"/>
+  		<circle cx="30" cy="30" r="8" fill="#fff" opacity="0.3"/>
+		</svg>
+
+                <h3>Busque</h3>
+                <p>Veja a lista de animais cadastrados e utilize filtros para encontrar rapidamente.</p>
+            </div>
+            <div class="card">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  		<rect x="8" y="16" width="48" height="32" rx="6" fill="#4db6ac" stroke="#388e3c" stroke-width="3"/>
+ 		 <polyline points="12,20 32,36 52,20" fill="none" stroke="#388e3c" stroke-width="3"/>
+  		<circle cx="32" cy="40" r="4" fill="#81c784"/>
+		</svg>
+
+                <h3>Conecte-se</h3>
+                <p>Entre em contato com tutores ou quem encontrou o animal para ajudar na reunião.</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        &copy; 2025 Pet Search. Projeto Integrador.
+    </footer>
+</body>
+</html>

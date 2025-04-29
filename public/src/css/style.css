@@ -1,0 +1,181 @@
+/* Novos estilos */
+.logo-animada {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 180px;
+  animation: fadein 1.2s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(-40px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+
+.pata {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin-bottom: 12px;
+  animation: pata-bounce 1.6s infinite alternate;
+}
+@keyframes pata-bounce {
+  0% { transform: scale(1) translateY(0);}
+  60% { transform: scale(1.08,0.95) translateY(-10px);}
+  100% { transform: scale(1) translateY(0);}
+}
+.pata .dedo {
+  position: absolute;
+  width: 26px;
+  height: 34px;
+  background: #388e3c;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  opacity: 0.9;
+  animation: dedo-move 1.6s infinite alternate;
+}
+.pata .dedo:nth-child(1) { left: 0; top: 0; }
+.pata .dedo:nth-child(2) { left: 32px; top: -12px; }
+.pata .dedo:nth-child(3) { left: 62px; top: 0; }
+.pata .dedo:nth-child(4) { left: 22px; top: 18px; width: 46px; height: 28px; }
+.pata .palma {
+  position: absolute;
+  left: 20px; top: 40px;
+  width: 50px; height: 36px;
+  background: #4db6ac;
+  border-radius: 60% 60% 60% 60% / 80% 80% 60% 60%;
+  z-index: 2;
+  box-shadow: 0 3px 12px #388e3c33;
+  animation: palma-move 1.6s infinite alternate;
+}
+@keyframes dedo-move {
+  0%,100% { filter: brightness(1);}
+  60% { filter: brightness(1.15);}
+}
+@keyframes palma-move {
+  0%,100% { filter: brightness(1);}
+  60% { filter: brightness(1.1);}
+}
+.texto-logo {
+  font-size: 2.7em;
+  font-weight: 800;
+  color: #23422c;
+  letter-spacing: 2px;
+  text-shadow: 0 3px 12px #388e3c22;
+  animation: text-pop 1.5s;
+}
+@keyframes text-pop {
+  0% { opacity: 0; transform: scale(0.7);}
+  80% { opacity: 1; transform: scale(1.05);}
+  100% { opacity: 1; transform: scale(1);}
+}
+
+}
+
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('https://pixabay.com/pt/photos/cachorro-animal-de-estima%C3%A7%C3%A3o-6931998/');
+    background-size: cover;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.search-bar {
+    margin: 40px auto;
+    max-width: 600px;
+}
+
+.animal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.animal-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.animal-card:hover {
+    transform: translateY(-5px);
+}
+
+.animal-imagen img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+.animal-info {
+    padding: 15px;
+}
+
+.btn-detalhes {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-detalhes:hover {
+    background: #45a049;
+}
+
+.detalhes-completos {
+    background: #f5f5f5;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+.detalhes-completos p {
+    margin: 8px 0;
+}
+
+/* Loader */
+.loader {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.required {
+  color: #dc3545;
+  margin-left: 3px;
+}
+
+.btn-submit {
+  background: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-submit:hover {
+  background: #45a049;
+}
+
+.btn-submit:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
