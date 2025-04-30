@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/api';
+const API_URL = '/api';
 
 // Função para cadastrar animal (mantida original)
 async function salvarCadastroAnimal(event) {
