@@ -112,3 +112,15 @@ app.get('/cadastro', (req, res) => res.sendFile(path.join(__dirname, 'public', '
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
+
+// Auto-ping para evitar suspensão no Render (adicione ao final do server.js)
+const fetch = require('node-fetch');
+
+const SELF_URL = 'https://petsearch-q70y.onrender.com/index.html'; // Substitua pela URL do seu site no Render
+
+setInterval(() => {
+  fetch(SELF_URL)
+    .then(() => console.log('Auto-ping enviado para manter o servidor ativo'))
+    .catch(err => console.error('Erro no auto-ping:', err));
+}, 14 * 60 * 1000); // A cada 14 minutos
+
