@@ -116,7 +116,7 @@ app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
 // Auto-ping para evitar suspensão no Render (adicione ao final do server.js)
 const fetch = require('node-fetch');
 
-const SELF_URL = 'https://petsearch-q70y.onrender.com/index.html'; // Substitua pela URL do seu site no Render
+const SELF_URL = 'https://petsearch-ssp0.onrender.com'; // Substitua pela URL do seu site no Render
 
 setInterval(() => {
   fetch(SELF_URL)
